@@ -1,3 +1,3 @@
 Voici Le projet Java
 
-Test Caca
+Groupe: Noé, Louis et Maxence

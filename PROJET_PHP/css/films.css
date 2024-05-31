@@ -1,0 +1,27 @@
+#filmButton{
+    color: #FFAA1D;
+}
+
+#text{
+    color: #FFAA1D;
+    animation: fadeIn 5s;
+    padding: 50px;
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#main_content{
+    flex-direction: column;
+}
+
+
+#accordion{
+    padding: 70px;
+}
+
+.caca{
+    background-color: black;
+}

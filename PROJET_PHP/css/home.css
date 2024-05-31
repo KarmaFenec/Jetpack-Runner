@@ -1,0 +1,52 @@
+#main_content{
+    background: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#seen{
+    width: 50%;
+}
+
+#notSeen{
+    width: 50%;
+}
+
+body{
+    height: 90%;
+    width: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+
+footer{
+    display: flex;
+    background: rgb(15, 15, 15);
+    color: #FFAA1D;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 10%;
+}
+
+#seen,#notSeen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2{
+    color: #FFAA1D;
+}
+
+
+#carouselCardSeen, #carouselCardNotSeen{
+    width: 18rem;
+}

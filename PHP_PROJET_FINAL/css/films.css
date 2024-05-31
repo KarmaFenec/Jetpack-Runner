@@ -1,0 +1,87 @@
+#main_content{
+    background: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#seen{
+    width: 50%;
+}
+
+#notSeen{
+    width: 50%;
+}
+
+body{
+    height: 90%;
+    width: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+
+footer{
+    display: flex;
+    background: rgb(15, 15, 15);
+    color: #FFAA1D;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 10%;
+}
+
+#seen,#notSeen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2{
+    color: #FFAA1D;
+}
+
+
+#carouselCardSeen, #carouselCardNotSeen{
+    width: 18rem;
+}
+
+/*CSS Lié au login*/
+#login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#login-lgd{
+    display: flex;
+    justify-content: center;
+}
+/*CSS Lié à l'affichage des films*/
+
+.films-list{
+    max-width: 800px;
+    height: 100%;
+    padding: 0 10px;
+
+    overflow: auto;
+}
+
+.film{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    background: lightgray;
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+.film-description{
+    font-size: 1em;
+}

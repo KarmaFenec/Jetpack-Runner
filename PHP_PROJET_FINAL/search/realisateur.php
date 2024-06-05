@@ -21,8 +21,11 @@ $data =$fdb->genererRequest($sql);
 <!-- Démarre le buffering -->
 <?php ob_start() ?>
 
-<div class="title">REALISATEUR</div>
+<?php //GENERALISABLE ?>
+<header>
+<div class="title">ACTEURS</div>
 
+<?php //A FAIRE ?>
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
     <form class="d-flex" role="search">
@@ -31,6 +34,14 @@ $data =$fdb->genererRequest($sql);
     </form>
     </div>
 </nav>
+
+<?php //A FAIRE ?>
+<?php if ($logged):?>
+    <div class="dropdown">
+        <a class="btn btn-dark" role="button" href="../client/acteur.php">EDIT</a>
+    </div>
+<?php endif; ?>
+</header>
 
 <div class="main-content">
 <?php //On affiche les realisateurs?>

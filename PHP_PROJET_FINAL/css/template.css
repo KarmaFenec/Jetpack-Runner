@@ -1,0 +1,53 @@
+body{
+    height: 90%;
+    width: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+
+footer{
+    display: flex;
+    background: rgb(33, 33, 33);
+    color: #FFAA1D;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 10%;
+}
+
+#offcanva{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+input{
+    border-radius: 5px;
+}
+
+#filmButton{
+    text-decoration: none;
+    color: black;
+}
+
+.titre{
+    color: #FFAA1D;
+}
+
+#offcanvaHeader{
+    display: flex;
+    justify-content: center;
+}
+
+#main_content{
+    background: black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}

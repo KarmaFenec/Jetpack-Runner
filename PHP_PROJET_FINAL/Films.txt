@@ -1,0 +1,21 @@
+(nom:Rocky) , (réal: John G.Avildsen),
+(act: Sylvester Stallone, Carl Weathers),
+(Synopsis : L'histoire de Rocky Balboa, un boxeur inconnu. De ses difficultés à son affrontement contre le champion du monde Apollo Creed.)
+(date:1976) ,(Drame sportif)/
+
+Seven, (réal:David Fincher),
+(act: Brad Pitt, Morgan Freeman, Kevin Spacey)
+(Synopsis: Deux policiers, William Somerset et David Mills, sont chargés d'une enquête concernant un tueur en série psychopathe, lequel planifie méthodiquement ses meurtres en fonction des sept péchés capitaux.)
+(date:1995), (Thriller psychologique, policier)/
+
+Pacifique Rim
+Prisoner
+Les Evadés
+La Ligne Verte
+Fight Club
+Alien
+Terminator
+Titanic, (réal: James Cameron),
+(act: Leonardo DiCaprio, Kate Winslet)
+(Synopsis: Il raconte l'histoire fictive de deux jeunes passagers du paquebot Titanic en avril 1912. Rose, est une passagère de première classe, et Jack, un artiste pauvre, embarqué à la dernière minute en troisième classe pour retourner aux États-Unis.)
+(date: 1997), (drame romantique)

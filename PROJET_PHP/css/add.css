@@ -1,0 +1,78 @@
+#choix{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#titre{
+    color: #FFAA1D;
+}
+
+#divFilm, #divPersonne{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aFilm, #aPersonne{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+}
+
+#aFilm{
+    background-image: url("../media/afficheFilm.jpg");
+    animation: fadeIn 5s;
+}
+
+#aPersonne{
+    background-image: url("../media/glosling.png");
+    animation: fadeIn 5s;
+}
+
+.before{
+    border: 2px solid #FFAA1D;
+    max-width: 40%;
+    max-height: 70%;
+    width: 40%;
+    height: 70%;
+    font-size: 30px;
+}
+
+.after{
+    width: 50%;
+    max-width: 50%;
+    height: 80%;
+    max-height: 80%;
+    border: 0px;
+    box-shadow: 3px solid grey;
+    font-size: 35px;
+}
+
+span{
+    border-radius: 20px;
+    background-color: #FFAA1D;
+    color: black;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spanFilm{
+    width: 40%;
+}
+
+#spanPersonne{
+    width: 70%;
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

@@ -31,6 +31,16 @@ $logged = isset($_SESSION['nickname']) ;
                 <div class="btn-group" role="group">
                     <?php if ($logged):?>
                         <div class="dropdown">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                EDIT
+                                </button>
+                                <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../client/addDB">ADD</a></li>
+                                <li><a class="dropdown-item" href="#">DELETE</a></li>
+                                <li><a class="dropdown-item" href="#">UPDATE</a></li>
+                                </ul>
+                            </div>
                             <a class="btn btn-dark" role="button" href="../client/logout.php">
                                 Logout
                             </a>

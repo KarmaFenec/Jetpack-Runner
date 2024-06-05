@@ -31,12 +31,12 @@ class FilmHTML
                         <div class="modal-body">
                             <?php if($table == "film"): ?>
                                 <img class="modal-img" src="<?= $data->affiche ?>">
-                                <?= "Genre :" . data->genre?>
+                                <?= "Genre :" . $data->genre?>
                                 <?= "Année de Sortie :" . $data->An_Sortie?>
                             <?php endif ?>
                             <?php if($table == "personne"): ?>
                                 <img class="modal-img" src="<?= $data->photo ?>">
-                                <?= data->genre?>
+                                <?= $data->genre?>
                                 <?= "Année de Naissance :" . $data->anNais?>
                             <?php endif ?>
                             <div class="modal-text">

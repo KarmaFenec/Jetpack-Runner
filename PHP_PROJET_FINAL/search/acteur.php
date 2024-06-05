@@ -11,7 +11,7 @@ $logged = isset($_SESSION['nickname']) ;
 
 //On récupère la base de donnée
 $table = "personne";
-$sql = "SELECT * FROM personne ORDER BY nom WHERE metier = 'acteur'";
+$sql = "SELECT * FROM personne WHERE metier = 'acteur' ORDER BY nom";
 $fdb = new FilmPDO() ;
 $fhtml = new FilmHTML();
 $data =$fdb->genererRequest($sql);

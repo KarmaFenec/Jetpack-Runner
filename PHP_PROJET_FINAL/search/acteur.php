@@ -21,6 +21,8 @@ $data =$fdb->genererRequest($sql);
 <!-- Démarre le buffering -->
 <?php ob_start() ?>
 
+<?php //GENERALISABLE ?>
+<header>
 <div class="title">ACTEURS</div>
 
 <nav class="navbar bg-body-tertiary">
@@ -31,6 +33,19 @@ $data =$fdb->genererRequest($sql);
     </form>
     </div>
 </nav>
+
+<?php if ($logged):?>
+    <div class="dropdown">
+            <a class="btn btn-dark" role="button" href="../client/logout.php">
+                Logout
+            </a>
+        </div>
+    <?php else: ?>
+        <a class="btn btn-dark" role="button" href="../client/login.php">
+            Login
+        </a>
+    <?php endif; ?>
+</header>
 
 <div class="main-content">
 <?php //On affiche les acteurs?>

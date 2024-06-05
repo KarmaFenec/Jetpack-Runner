@@ -36,12 +36,6 @@ $data =$fdb->genererRequest($sql);
     </div>
 </nav>
 
-<?php //A FAIRE ?>
-<?php if ($logged):?>
-    <div class="dropdown">
-        <a class="btn btn-dark" role="button" href="../client/acteur.php">EDIT</a>
-    </div>
-<?php endif; ?>
 </header>
 
 <div class="main-content">

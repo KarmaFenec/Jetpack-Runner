@@ -12,18 +12,9 @@ class FilmHTML
         <article class="personnes">
     <?php endif ?>
 
-
-            <?php if($table == "film"): ?>
-            <h1 class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<?= "film_" . $data->id ?>><?= $data->nom ?></h1>
+            <h1 class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<?= $data->id ?>><?= $data->nom ?></h1>
             <?php //le nom dois conduire sur la fiche de l'article ?>
-            <div class="modal fade" id=<?= "film_" . $data->id ?> tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <?php endif ?>
-
-            <?php if($table == "personne"): ?>
-            <h1 class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<?= "personne" . $data->id ?>><?= $data->nom ." ". $data->prenom ?></h1>
-            <?php //le nom dois conduire sur la fiche de l'article ?>
-            <div class="modal fade" id=<?= "personne" . $data->id ?> tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <?php endif ?>
+            <div class="modal fade" id=<?= $data->id ?> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
             <?php //l'article complet?>
                 <div class="modal-dialog modal-xl">

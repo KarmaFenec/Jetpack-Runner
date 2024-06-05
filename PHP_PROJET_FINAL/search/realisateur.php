@@ -10,7 +10,7 @@ session_start() ;
 $logged = isset($_SESSION['nickname']) ;
 
 //On récupère la base de donnée
-$table = "film";
+$table = "personne";
 $sql = "SELECT * FROM film ORDER BY nom WHERE metier = real";
 $fdb = new FilmPDO() ;
 $fhtml = new FilmHTML();

@@ -12,7 +12,7 @@ class FilmHTML
         <article class="personnes">
     <?php endif ?>
 
-            <h1 class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<?= $data->id ?>><?= $data->nom ?></h1>
+            <h1 class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<?= "#".$data->id ?>><?= $data->nom ?></h1>
             <?php //le nom dois conduire sur la fiche de l'article ?>
             <div class="modal fade" id=<?= $data->id ?> tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 

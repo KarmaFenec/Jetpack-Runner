@@ -41,12 +41,12 @@ class FilmHTML
                             <?php if($table == "film"): ?>
                                 <img class="modal-img" src="<?= $data->affiche ?>">
                                 <?= "Genre :" . data->genre?>
-                                <?= "Année de Sortie :" . data->An_Sortie?>
+                                <?= "Année de Sortie :" . $data->An_Sortie?>
                             <?php endif ?>
                             <?php if($table == "personne"): ?>
                                 <img class="modal-img" src="<?= $data->photo ?>">
                                 <?= data->genre?>
-                                <?= "Année de Naissance :" . data->anNais?>
+                                <?= "Année de Naissance :" . $data->anNais?>
                             <?php endif ?>
                             <div class="modal-text">
                                 <?= $data->description ?>

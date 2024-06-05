@@ -24,7 +24,7 @@ class FilmHTML
                                 <h1 class="modal-title fs-5" id="ModalLabel"><?= $data->nom ?></h1>
                             <?php endif ?>
                             <?php if($table == "personne"): ?>
-                                <h1 class="modal-title fs-5" id="ModalLabel"><?= $data->nom . $data->prenom ?></h1>
+                                <h1 class="modal-title fs-5" id="ModalLabel"><?= $data->nom ." ". $data->prenom ?></h1>
                             <?php endif ?>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>

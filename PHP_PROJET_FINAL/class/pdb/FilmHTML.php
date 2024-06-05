@@ -20,7 +20,7 @@ class FilmHTML
             <?php endif ?>
 
             <?php if($table == "personne"): ?>
-            <h1 class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<?= "personne" . $data->id ?>><?= $data->nom . $data->prenom ?></h1>
+            <h1 class="btn btn-primary" data-bs-toggle="modal" data-bs-target=<?= "personne" . $data->id ?>><?= $data->nom ." ". $data->prenom ?></h1>
             <?php //le nom dois conduire sur la fiche de l'article ?>
             <div class="modal fade" id=<?= "personne" . $data->id ?> tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
             <?php endif ?>

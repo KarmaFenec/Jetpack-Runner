@@ -26,10 +26,6 @@
     background: black;
 }
 
-.hidden{
-    opacity: 0;
-}
-
 #searchBar{
     padding-left: 50px;
     animation: fadeIn 8s;

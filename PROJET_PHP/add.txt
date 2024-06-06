@@ -1,0 +1,3 @@
+nom, affiche, genre, synopsis, date sortie, acteurs pricipaux, réalisateurs, durée
+
+nom, prénom, naissance, photo, métier, description

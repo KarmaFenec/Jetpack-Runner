@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>TheFilmGuy</title>
+        <link rel = "stylesheet" href = "css/home.css">
+        <link rel = "stylesheet" href = "css/template.css">
+        <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <header >
+            <nav class = "navbar bg-body-tertiary" data-bs-theme="dark">
+                <div class = "container">
+
+                    <!-- remplacer par le logo -->
+                    <a class = "navbar-brand" href = "home.html">
+                        <img src = "media/logo-corp.png"  width="30" height = "24">
+                    </a>
+
+                    <!-- bouton du offcanva -->
+                    <button class = "btn btn-warning" type = "button" data-bs-theme="dark" data-bs-toggle="offcanvas" data-bs-target = "#offcanvasTop" aria-controls="offcanvasTop">Menu</button>
+                
+                    <!-- offcanva -->
+                    <div class ="offcanvas offcanvas-top" tabindex="-1" id ="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                        <div class ="offcanvas-header">
+                            <button type = "button" class ="btn-close" data-bs-dismiss = "offcanvas" aria-label = "Close"></button>
+                        </div>
+
+                        <div id = "offcanvaHeader" class = "offcanvas-header" data-bs-scroll="true">
+                            <!-- mettre le logo ici -->
+                            <h2 class = "titre">The Film Guy</h2>
+                        </div>
+
+                        <div id = "offcanva" class = "offcanvas-body" data-bs-scroll = "true">
+                            <button type = "button" class = "btn btn-warning btn-lg"><a id = "filmButton" href = "films.html">Films</a></button>
+                            <button type = "button" class = "btn btn-warning btn-lg">Acteurs</button>
+                            <button type = "button" class = "btn btn-warning btn-lg">Réalisateurs</button>
+                            <button type = "button" class = "btn btn-warning btn-lg">Genre</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <div id = "main_content">
+            <div id = "seen">
+                <h2 class = "titre">Films vus</h2>
+                
+                <!-- premier carousel -->
+                <div id = "carouselCardSeen" class = "carousel slide carousel-fade" data-bs-ride = "carousel">
+                    <div id = "cards" class = "carousel-inner">
+
+                        <!-- insérer les cartes ici -->
+                        <div class = "carousel-item active">
+                            <div class = "card" style = "width: 18rem;">
+                                <img src = "media/glosling.png" class = "card-img-top">
+                                <div class = "card-body">
+                                    <h5 class = "card-title">Le conducteur de drive</h5>
+                                    <p class = "card-text">Celui qui conduit la voiture de drive</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "carousel-item">
+                            <img src = "media/logo-corp.png" class = "img-thumbnail">
+                        </div>
+                    </div>
+    
+                    <button class = "carousel-control-prev" type = "button" data-bs-target = "#carouselCardSeen" data-bs-slide = "prev">
+                        <span class = "carousel-control-prev-icon" aria-hidden = "true"></span>
+                    </button>
+                    <button class = "carousel-control-next" type = "button" data-bs-target = "#carouselCardSeen" data-bs-slide = "next">
+                        <span class = "carousel-control-next-icon" aria-hidden = "true"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div id = "notSeen">
+                <h2 class = "titre">Films non vus</h2>
+
+                <!-- second carousel -->
+                <div id = "carouselCardNotSeen" class = "carousel slide carousel-fade" data-bs-ride = "carousel">
+                    <div class = "carousel-inner">
+
+                        <!-- insérer les cartes ici -->
+                        <div class = "carousel-item active">
+                            <div class = "card" style = "width: 18rem;">
+                                <img src = "media/glosling.png" class = "card-img-top">
+                                <div class = "card-body">
+                                    <h5 class = "card-title">Le conducteur de drive</h5>
+                                    <p class = "card-text">Celui qui conduit la voiture de drive</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "carousel-item">
+                            <img src = "media/logo-corp.png" class = "img-thumbnail">
+                        </div>
+                    </div>
+    
+                    <button class = "carousel-control-prev" type = "button" data-bs-target = "#carouselCardNotSeen" data-bs-slide = "prev">
+                        <span class = "carousel-control-prev-icon" aria-hidden = "true"></span>
+                    </button>
+                    <button class = "carousel-control-next" type = "button" data-bs-target = "#carouselCardNotSeen" data-bs-slide = "next">
+                        <span class = "carousel-control-next-icon" aria-hidden = "true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <!-- mettre les sources ici -->
+        <footer>
+            <p>Collaborateurs: Ld, Nd, Mh</p>
+            <img src = "media/logo-corp.png">
+            <p>© 2024-2024 by TheFilmGuy.com, Inc.</p>
+        </footer>
+
+        <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+#seen{
+    width: 50%;
+}
+
+#notSeen{
+    width: 50%;
+}
+
+
+
+#seen,#notSeen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+#carouselCardSeen, #carouselCardNotSeen{
+    width: 18rem;
+}

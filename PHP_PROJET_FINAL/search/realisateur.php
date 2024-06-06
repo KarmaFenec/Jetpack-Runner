@@ -5,37 +5,47 @@ require "../class/pdo/FilmPDO.php";
 require "../class/pdb/FilmHTML.php";
 
 Autoloader::register();
+?>
+<link rel = "stylesheet" href = "../css/films.css">
+<?php
 
 session_start() ;
 $logged = isset($_SESSION['nickname']) ;
 
 //On récupère la base de donnée
 $table = "personne";
-$sql = "SELECT * FROM personne  WHERE (metier = 'réalisateur' || metier = 'act_réal')";
+$sql = "SELECT * FROM personne WHERE (metier = 'réalisateur' || metier = 'act_réal')";
 $fdb = new FilmPDO() ;
 $fhtml = new FilmHTML();
-//var_dump($data);
 
+//var_dump($data);
 ?>
 
 <!-- Démarre le buffering -->
 <?php ob_start() ?>
 
+
 <?php //GENERALISABLE ?>
-<header>
-<div class="title">ACTEURS</div>
 
-<?php //A FAIRE ?>
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name='search'>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    </div>
-</nav>
 
-<?php 
+
+<div id="main_content">
+<div id = "text">
+                <h2>Vos réalisateurs</h2>
+                <p>Votre liste des réalisateurs, triée par vous, pour vous</p>
+            </div>
+            <div id = "filtres">
+                <!-- div pour mettre les différents filtres -->
+                <nav class = "navbar" style = "padding-left: 50px;">
+                    <div class = "container-fluid">
+                        <form class = "d-flex" role = "search">
+                            <input class = "form-control me-2" type = "search" placeholder = "Search" aria-label = "Search" name = "search">
+                            <button class = "btn btn-outline-light" type = "submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <?php 
 //récupération de la donnée search
 if($_GET!=null){
     $param = $_GET['search'] ;
@@ -59,18 +69,20 @@ if($_GET!=null){
 $sql=$sql." ORDER BY nom ";
 $data =$fdb->genererRequest($sql);
 if($data==null){
-    echo "<h2>Aucun résultat de ".$mot." </h2>";
+    echo "<h2 id='text'>Aucun résultat de ".$mot." </h2>";
 }
 ?>
 
-<div class="main-content">
-<?php //On affiche les acteurs?>
-    <section class="acteurs-list">
+
+
+
+<?php //On affiche les films?>
+    <div id = "accordion" class = "accordion accordion-flush" data-bs-theme = "dark">
         <?php foreach ($data as $d): ?>
             <?= $fhtml->getHTML($d, $table); ?>
         <?php endforeach;?>
-    </section>
+        </div>
 </div>
-
+<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <?php $content=ob_get_clean() ?>
 <?php Template::render($content) ?>

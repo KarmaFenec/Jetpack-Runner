@@ -30,6 +30,7 @@ $fhtml = new FilmHTML();
 
 
 <div id="main_content">
+
 <div id = "text">
                 <h2>Vos Films</h2>
                 <p>Votre liste de films, triée par vous, pour vous</p>
@@ -58,7 +59,7 @@ if($_GET!=null){
 $sql=$sql." ORDER BY nom ";
 $data =$fdb->genererRequest($sql);
 if($data==null){
-    echo "<h2>Aucun résultat de ".$mot." </h2>";
+    echo "<h2 id='text'>Aucun résultat de ".$mot." </h2>";
 }
 ?>
 

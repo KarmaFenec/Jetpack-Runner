@@ -1,23 +1,18 @@
-body{
-    height: 90%;
-    width: 100%;
-}
-
-html{
+html,body{
+    box-sizing: border-box;
     height: 100%;
+    padding: 0;
+    margin: 0;
 }
-
 
 footer{
     display: flex;
     background: rgb(33, 33, 33);
     color: #FFAA1D;
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    justify-content: space-between;
-    align-items: baseline;
-    height: 10%;
+    justify-content: space-evenly;
+    height: 10vh;
+    
 }
 
 #offcanva{
@@ -50,4 +45,17 @@ input{
     height: 100%;
     width: 100%;
     display: flex;
+    flex-grow: 1;
 }
+
+#wrapper{
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+footer,header{
+    flex-grow: 0;
+    flex-grow: 0;
+}
+

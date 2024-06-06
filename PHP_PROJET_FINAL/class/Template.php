@@ -15,6 +15,7 @@ class Template
 
         </head>
         <body>
+            <div id="wrapper">
             <?php include "../pages/header.php" ?>
 
             
@@ -22,7 +23,7 @@ class Template
             
 
             <?php include "../pages/footer.php" ?>
-            
+            </div>
         </body>
         </html>
 

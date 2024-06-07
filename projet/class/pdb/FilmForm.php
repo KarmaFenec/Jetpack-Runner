@@ -101,6 +101,28 @@ class FilmForm
 
             <script src = "../../javascript/addFilm.js"></script>
         </div>
+
+    public function deletefilmForm(){?>
+        <style>
+            #main_content{
+                color: #FFAA1D;
+            }
+        </style>
+        <div id = "main_content" style = "flex-direction: column; justify-content: center; align-items: center;">
+            <h2 id = "titre">Quel film voulez-vous supprimer:</h2>
+            <form class="row g-2 gy-5 justify-content-center" method="post" enctype="multipart/form-data">
+                <div class="col-md-4">
+                    <label for="name" class="form-label">Nom du film</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class = "w-100"></div>
+                <div class = "col-md-2">
+                    <button type = "submit" class = "btn btn-danger">Supprimer</button>
+                </div>
+            </form>
+        </div>
+        <?php
+    }
         <?php
     }
 }

@@ -98,6 +98,8 @@ class FilmForm
                     }))
                 })
             </script>
+
+            <script src = "../javascript/addFilm.js"></script>
         </div>
         <?php
     }

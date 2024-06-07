@@ -61,4 +61,13 @@ class FilmDB
         return $query;
     }
 
+        public function updateFilm($id, $column, $value)
+    {
+        // On doit pouvoir delete un film
+        $query = "UPDATE film SET ".$column." = ".$value." WHERE ('$id')";
+        $data = $fdb->genererRequest($query);
+        header("Location: pages/accueil.php"); // vers accueil.php
+        return $query;
+    }
+
 }

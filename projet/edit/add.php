@@ -19,3 +19,5 @@ $logged = isset($_SESSION['nickname']) ;
     </div>
 </div>
 </body>
+
+<script src = "../javascript/add.js"></script>

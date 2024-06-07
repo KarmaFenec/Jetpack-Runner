@@ -12,7 +12,7 @@ class FilmDB
         // On doit pouvoir créer un film/acteur/réalisateur
         $fdb = new FilmPDO();
         $bd = $fdb->genererRequest('SELECT COUNT(*) AS nbFilm FROM film');
-        $bd = $bd + 1;
+        $id = $bd + 1;
         $name = htmlspecialchars($name);
         $description = htmlspecialchars($description);
         $genre = htmlspecialchars($genre);

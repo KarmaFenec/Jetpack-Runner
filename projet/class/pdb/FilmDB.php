@@ -5,7 +5,6 @@ use \pdo\FilmPDO;
 class FilmDB
 {
     protected $fdb;
-    protected $nbre_films;
 
     public function createFilm($name, $imgFile = null, $description = null, $genre = null, $reals = null, $acts = null, $anSortie = null, $duree = null)
     {

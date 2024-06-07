@@ -19,6 +19,7 @@ class FilmDB
         $reals = htmlspecialchars($reals);
         $acts = htmlspecialchars($acts);
 
+        $view = false;
         $imgName = null;
         // enregistrement du fichier uploadé
         if ($imgFile != null) {
@@ -35,8 +36,8 @@ class FilmDB
             echo "NO IMAGE !!!!";
         }
 
-        $query = "INSERT INTO film (name, img, description, genre, reals, acts, anSortie, duree) VALUES ('$name', '$dirImg', '$description', '$genre', '$reals', '$acts', '$anSortie', '$duree')";
-        $fdb->executeRequest($query);
+        $query = "INSERT INTO film VALUES ('$id', '$name', '$dirImg', '$description', '$genre', '$reals', '$acts', '$anSortie', '$view' ,'$duree')";
+        $data = $fdb->genererRequest($query);
         header("Location: pages/accueil.php"); // vers accueil.php
         return $query;
     }

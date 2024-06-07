@@ -1,0 +1,41 @@
+#filmButton{
+    color: #FFAA1D;
+}
+
+#text{
+    color: #FFAA1D;
+    animation: fadeIn 5s;
+    padding: 50px;
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#main_content{
+    flex-direction: column;
+}
+
+.test{
+    animation: fadeIn 5s;
+}
+
+#accordion{
+    padding: 70px;
+    background: black;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+#searchBar{
+    padding-left: 50px;
+    animation: fadeIn 8s;
+}
+
+#filtres{
+    display: flex;
+    align-items: center;
+}

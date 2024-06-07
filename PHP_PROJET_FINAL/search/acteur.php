@@ -17,7 +17,7 @@ $table = "personne";
 $sql = "SELECT * FROM personne WHERE (metier = 'acteur' || metier = 'act_réal')";
 $fdb = new FilmPDO() ;
 $fhtml = new FilmHTML();
-
+$tag = new Tag();
 //var_dump($data);
 ?>
 
@@ -41,6 +41,7 @@ $fhtml = new FilmHTML();
                         <form class = "d-flex" role = "search">
                             <input class = "form-control me-2" type = "search" placeholder = "Search" aria-label = "Search" name = "search">
                             <button class = "btn btn-outline-light" type = "submit">Search</button>
+                            <?php $tag->genererFiltre($table); ?>
                         </form>
                     </div>
                 </nav>
@@ -48,28 +49,35 @@ $fhtml = new FilmHTML();
             
 <?php 
 //récupération de la donnée search
-
-if($_GET!=null ){
-    var_dump($_POST['donnee']);
-    $param = $_GET['search'] ;
-    // encodage avant affichage pour éviter les failles...
-    $mot = htmlspecialchars($param) ;
-    //var_dump($mot);
-    if($mot!=""){
-        $tab=explode(' ', $mot);
-        if(count($tab)==2){
-            $sql=$sql."&& (prenom LIKE '%".$tab[0]."%' || nom LIKE '%".$tab[1]."%')";  
+if($_GET!=null){
+    if(key($_GET)=='search'){
+        $param = $_GET['search'] ;
+        // encodage avant affichage pour éviter les failles...
+        $mot = htmlspecialchars($param) ;
+        //var_dump($mot);
+        if($mot!=""){
+            $tab=explode(' ', $mot);
+            if(count($tab)==2){
+                $sql=$sql."&& (prenom LIKE '%".$tab[0]."%' || nom LIKE '%".$tab[1]."%')";  
+            }
+            else if(count($tab)==1){
+                $sql=$sql."&& (prenom LIKE '%".$mot."%' || nom LIKE '%".$mot."%')";
+            }
+            else if(count($tab)>2){
+                echo "<h2>Trop de mots différents  ! </h2>";
+            }
+            
         }
-        else if(count($tab)==1){
-            $sql=$sql."&& (prenom LIKE '%".$mot."%' || nom LIKE '%".$mot."%')";
-        }
-        else if(count($tab)>2){
-            echo "<h2>Trop de mots différents  ! </h2>";
-        }
-        
+    }
+    if(key($_GET)=='data'){
+        $sql=$sql."&& id=".$_GET['data'];
     }
 }
-$sql=$sql." ORDER BY nom ";
+
+if(isset($_GET['options'])){
+    $sql=$sql." ORDER BY ".$_GET['options'];
+}
+
 $data =$fdb->genererRequest($sql);
 if($data==null){
     echo "<h2 id='text'>Aucun résultat de ".$mot." </h2>";

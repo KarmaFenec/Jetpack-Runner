@@ -3,6 +3,7 @@
 require "../class/Autoloader.php";
 require "../class/pdo/FilmPDO.php";
 require "../class/pdb/FilmHTML.php";
+require "../class/Tag.php";
 
 Autoloader::register();
 ?>
@@ -17,7 +18,7 @@ $table = "film";
 $sql = "SELECT * FROM film";
 $fdb = new FilmPDO() ;
 $fhtml = new FilmHTML();
-
+$tag = new Tag();
 //var_dump($data);
 ?>
 
@@ -42,25 +43,63 @@ $fhtml = new FilmHTML();
                         <form class = "d-flex" role = "search">
                             <input class = "form-control me-2" type = "search" placeholder = "Search" aria-label = "Search" name = "sear">
                             <button class = "btn btn-outline-light" type = "submit">Search</button>
+                            <?php $tag->genererFiltre($table); ?>
+                            <?php
+                            if (isset($_GET['genres'])) {
+                                $sql=$sql." WHERE genre=";
+                                $selectedGenres = $_GET['genres'];
+                                $i = 0;
+                                foreach ($selectedGenres as $genre) {
+                                    if($i!=0){
+                                        $sql=$sql." OR genre=";
+                                    }
+                                    $sql=$sql."'".$genre."'";
+                                    $i=$i+1;
+                                }
+                            }
+                            ?>
+                           
+                           
                         </form>
                     </div>
                 </nav>
             </div>
 <?php 
 //récupération de la donnée search
+
 if($_GET!=null){
-    $param = $_GET['sear'] ;
-    // encodage avant affichage pour éviter les failles...
-    $mot = htmlspecialchars($param);
-    if($mot!=""){
-        $sql=$sql." WHERE nom LIKE '%".$mot."%'";
+    if (!isset($_GET['genres']) && (isset($_GET['sear']))) {
+        if($_GET['sear']!=""){
+            $sql.=" WHERE ";
+        }
+            
+        
+    }
+    if(key($_GET)=='sear' && $_GET['sear']!=""){
+        if(isset($_GET['genres'])){
+            $sql=$sql."&& ";
+        }
+        $param = $_GET['sear'] ;
+        // encodage avant affichage pour éviter les failles...
+        $mot = htmlspecialchars($param);
+        if($mot!=""){
+            $sql=$sql." nom LIKE '%".$mot."%'";
+        }
+        
+    }
+    if(key($_GET)=='data'){
+        $sql=$sql." WHERE id=".$_GET['data'];
     }
 }
-$sql=$sql." ORDER BY nom ";
+if(isset($_GET['options'])){
+    $sql=$sql." ORDER BY ".$_GET['options'];
+}
+
 $data =$fdb->genererRequest($sql);
 if($data==null){
     echo "<h2 id='text'>Aucun résultat de ".$mot." </h2>";
 }
+
 ?>
 
 

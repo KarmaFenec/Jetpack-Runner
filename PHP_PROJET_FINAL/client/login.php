@@ -2,6 +2,11 @@
 require "../class/Autoloader.php";
 Autoloader::register();
 
+?>
+
+<link rel = "stylesheet" href = "../css/logger.css">
+
+<?php
 session_start() ;
 
 include "../class/Logger.php" ;

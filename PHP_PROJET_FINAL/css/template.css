@@ -26,10 +26,6 @@ input{
     border-radius: 5px;
 }
 
-#filmButton{
-    text-decoration: none;
-    color: black;
-}
 
 .titre{
     color: #FFAA1D;
@@ -59,3 +55,8 @@ footer,header{
     flex-grow: 0;
 }
 
+#offcanva{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

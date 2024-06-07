@@ -4,10 +4,16 @@ class FilmHTML
 {
     public function getHTML($data, $table){ ?>
         <script>
-        function handleClick(event) {
+        function handleClick(event,lien) {
             event.preventDefault(); 
             const dat = event.target.getAttribute('info');
-            alert(dat);
+            //const xhr = new XMLHttpRequest();
+            //xhr.open('GET', lien+"?data="+ encodeURIComponent(dat));
+            //xhr.send();
+            //console.log(xhr);
+            window.location.href = lien+"?data="+ encodeURIComponent(dat);
+
+        
         }
         </script>
         <div class = "accordion-item">
@@ -42,7 +48,7 @@ class FilmHTML
                                     <p class = "card-text">Acteurs: 
                                         <?php 
                                         foreach($acteur as $act){
-                                            ?> <a href="acteur.php" info="<?php echo $act->id?>" onclick="handleClick(event)"><?php echo $act->prenom;
+                                            ?> <a href="acteur.php" info="<?php echo $act->id?>" onclick="handleClick(event,'acteur.php')"><?php echo $act->prenom;
                                             ?> <?php
                                             echo $act->nom;
                                             ?></a>,<?php
@@ -57,7 +63,7 @@ class FilmHTML
                                     $sql="SELECT * FROM personne WHERE id=".$data->l_real;
                                     $real=$fdb->genererRequest($sql);
                                     ?>
-                                    <p class = "card-text">Réalisateur:  <a href="realisateur.php" info="<?php echo $real[0]->id?>" onclick="handleClick(event)"> <?php  echo $real[0]->prenom?> <?php echo $real[0]->nom?></a></p>
+                                    <p class = "card-text">Réalisateur:  <a href="realisateur.php" info="<?php echo $real[0]->id?>" onclick="handleClick(event,'realisateur.php')"> <?php  echo $real[0]->prenom?> <?php echo $real[0]->nom?></a></p>
                                     
                                     <?php endif;?>
                                     <?php if($table=='personne') : ?>
@@ -77,7 +83,7 @@ class FilmHTML
                                     <p class = "card-text">Film(s) : 
                                         <?php 
                                         foreach($film as $f){
-                                            ?> <a href="film.php" info="<?php echo $f->id?>" onclick="handleClick(event)"><?php echo $f->nom;
+                                            ?> <a href="film.php" info="<?php echo $f->id?>" onclick="handleClick(event,'film.php')"><?php echo $f->nom;
                                             ?></a>,<?php
                                         }
                                          

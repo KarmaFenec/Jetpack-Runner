@@ -86,6 +86,8 @@ $fhtml = new FilmHTML();?>
                     <button class = "carousel-control-next" type = "button" data-bs-target = "#carouselCardNotSeen" data-bs-slide = "next">
                         <span class = "carousel-control-next-icon" aria-hidden = "true"></span>
                     </button>
+                        </div>
+                        </div>
                 </div>
                 <?php 
                 }else{

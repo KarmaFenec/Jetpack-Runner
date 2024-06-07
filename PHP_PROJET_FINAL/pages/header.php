@@ -1,58 +1,51 @@
 <?php
 $logged = isset($_SESSION['nickname']) ;
+
 ?>
+<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-
-<header >
+<header>
     <nav class = "navbar bg-body-tertiary" data-bs-theme="dark">
         <div class = "container">
-
-            <!-- remplacer par le logo -->
             <a class = "navbar-brand" href = "../pages/accueil.php">
-                <img src = "../images/logo-corp.png"  width="30" height = "24">
+                <img src = "../images/logo-corp.png" alt = "Bootstrap" width="30" height = "24">
             </a>
-
-            <!-- bouton du offcanva -->
             <button class = "btn btn-warning" type = "button" data-bs-theme="dark" data-bs-toggle="offcanvas" data-bs-target = "#offcanvasTop" aria-controls="offcanvasTop">Menu</button>
-        
-            <!-- offcanva -->
-            <div class ="offcanvas offcanvas-top" tabindex="-1" id ="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                <div class ="offcanvas-header">
-                    <button type = "button" class ="btn-close" data-bs-dismiss = "offcanvas" aria-label = "Close"></button>
-                </div>
-
-                <div id = "offcanvaHeader" class = "offcanvas-header" data-bs-scroll="true">
-                    <!-- mettre le logo ici -->
-                    <h2 class = "titre">The Film Guy</h2>
-                </div>
-
-                <div id = "offcanva" class = "offcanvas-body" data-bs-scroll = "true">
-                    <button type = "button" class = "btn btn-warning btn-lg"><a class="navbar-button" href="../search/film.php">Film</a></button>
-                    <button type = "button" class = "btn btn-warning btn-lg"><a class="navbar-button" href="../search/acteur.php">Acteurs</button>
-                    <button type = "button" class = "btn btn-warning btn-lg"><a class="navbar-button" href="../search/realisateur.php">Réalisateurs</button>
-                    <div class="btn-group" role="group">
-                    <?php if ($logged):?>
-                    <div class="dropdown">
-                        <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    EDIT
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="../client/addDB.php">ADD</a></li>
-                                    <li><a class="dropdown-item" href="#">DELETE</a></li>
-                                    <li><a class="dropdown-item" href="#">UPDATE</a></li>
-                                    </ul>
-                                </div>
-                                <a class="btn btn-dark" role="button" href="../client/logout.php">
-                                    Logout
-                                </a>
-                            </div>
-                        <?php else: ?>
-                            <a class="btn btn-dark" role="button" href="../client/login.php">
-                                Login
-                            </a>
-                        <?php endif; ?>
+            <div>
+                <div class ="offcanvas offcanvas-top" tabindex="-1" id ="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                    <div class ="offcanvas-header">
+                        <h2 class = "offcanvas-header">TheFilmGuy</h5>
+                        <button type = "button" class ="btn-close" data-bs-dismiss = "offcanvas" aria-label = "Close"></button>
                     </div>
+                    <div class = "offcanvas-body">
+                        <button type = "button" class = "btn btn-warning btn-lg"><a href = "../search/film.php" style = "text-decoration: none; color: black;">Films</a></button>
+                        <button type = "button" class = "btn btn-warning btn-lg"><a href = "../search/acteur.php" style = "text-decoration: none; color: black;">Acteurs</a></button>
+                        <button type = "button" class = "btn btn-warning btn-lg"><a href = "../search/realisateur.php" style = "text-decoration: none; color: black;">Realisateurs</a></button>
+                    </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <?php if ($logged):?>
+                        <div class="dropdown">
+                            <div class="btn-group" role="group">
+                                <button type = "button" class = "btn btn-primary">
+                                    <a href = "../edit/add.php" style = "text-decoration: none; color: white;">ADD</a>
+                                </button>
+                                <button type = "button" class = "btn btn-primary">
+                                    <a href = "../edit/delete.php" style = "text-decoration: none; color: white;">DELETE</a>
+                                </button>
+                                <button type = "button" class = "btn btn-primary">
+                                    <a href = "../edit/edit.php" style = "text-decoration: none; color: white">EDIT</a>
+                                </button>
+                            </div>
+                        </div>
+                        <a class="btn btn-outline-secondary" role="button" href="../client/logout.php">
+                                Logout
+                            </a>
+                    <?php else: ?>
+                        <a class="btn btn-secondary" role="button" href="../client/login.php">
+                            Login
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

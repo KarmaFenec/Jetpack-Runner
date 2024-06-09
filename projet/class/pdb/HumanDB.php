@@ -1,7 +1,7 @@
 <?php
 
 require "../class/pdo/FilmPDO.php";
-class FilmDB
+class HumanDB
 {
     protected $fdb;
 

@@ -1,6 +1,6 @@
 <?php
 
-class FilmForm
+class HumanForm
 {
     public function genererHumanForm(){?>
         <style>

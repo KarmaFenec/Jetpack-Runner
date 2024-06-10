@@ -5,12 +5,13 @@ class HumanDB
 {
     protected $fdb;
 
-    public function createHuman($name, $firstname, $imgFile = null, $description = null, $anNais = null, $metier = null)
+    public function createHuman($name, $firstname, $imgFile = null, $description = null, $anNais = null, $metier = null, $nom_films=null)
     {
         // On doit pouvoir créer un film/acteur/réalisateur
         $fdb = new FilmPDO();
         $bd = $fdb->genererRequest('SELECT COUNT(*) AS nbPersonne FROM personne');
         $id = $bd[0]->nbPersonne;
+        $id = $id + 1;
 
         $name = htmlspecialchars($name);
         $firstname = htmlspecialchars($firstname);
@@ -19,8 +20,12 @@ class HumanDB
         $metier = htmlspecialchars($metier);
         
         // enregistrement du fichier uploadé
-        $dirName = "../photo/";
-        $dirImg = $dirName . $imgFile;
+        if($imgFile != null){
+            $dirName = "../photo/";
+            $dirImg = $dirName . $imgFile;
+        }else{
+            $dirImg = null;
+        }
         /*
         $sql_act=$fdb->genererRequest("SELECT id FROM film WHERE nom='".$nom_films."'");
         if(!empty($sql_act)){
@@ -30,7 +35,7 @@ class HumanDB
             $act=" ' ' ";
         }
         */
-        $query = "INSERT INTO personne VALUES (".$id.", '".$firstname."', '".$name."', '".$anNais."', '".$description."', ".$dirImg.", ".$metier.", ".$nom_films.")";
+        $query = "INSERT INTO personne VALUES (".$id.", '".$firstname."', '".$name."', ".$anNais.", '".$description."', '".$dirImg."', '".$metier."', '".$nom_films."')";
         var_dump($query);
         $data = $fdb->genererRequest($query);
         header("Location: ../pages/accueil.php"); // vers accueil.php

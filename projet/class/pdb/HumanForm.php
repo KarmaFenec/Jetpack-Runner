@@ -24,22 +24,22 @@ class HumanForm
                 </div>
                 <div class = "col-md-4">
                     <label for = "nom" class = "form-label">Nom</label>
-                    <input type = "text" class = "form-control" id = "nom">
+                    <input type = "text" class = "form-control" id = "nom" name="nom">
                 </div>
                 <div class ="col-md-4">
-                    <label for = "prénom" class = "form-label">Prénom</label>
-                    <input type = "text" class = "form-control" id = "prénom">
+                    <label for = "prenom" class = "form-label">Prénom</label>
+                    <input type = "text" class = "form-control" id = "prenom" name="prenom">
                 </div>
 
                 <div class="w-100"></div>
 
                 <div class = "col-md-2">
                     <label for = "naissance" class = "form-label">Date de naissance</label>
-                    <input type = "text" class = "form-control" id = "naissance">
+                    <input type = "text" class = "form-control" id = "naissance" name="birth">
                 </div>
                 <div class ="col-md-3">
                     <label for = "formFile" class = "form-label">Photo</label>
-                    <input class = "form-control" type = "file" id = "formFile">
+                    <input class = "form-control" type = "file" id = "formFile" name="photo">
                 </div>
 
                 <div class = "w-100"></div>
@@ -47,7 +47,7 @@ class HumanForm
 
                 <div class = "col-md-7">
                     <label for = "bio" class = "form-label">Biographie</label>
-                    <input class = "form-control" type = "text" id = "bio">
+                    <input class = "form-control" type = "text" id = "bio" name="bio">
                 </div>
 
                 <div class = "w-100"></div>

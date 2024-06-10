@@ -16,11 +16,10 @@ $hdb = new HumanDB();
 
 <body>
 <?php
-    if (!isset($_POST['name'])) {
+    if (!isset($_POST['nom'])) {
         $hf->genererHumanForm();
     } else {
-        var_dump($_POST);
-        $hdb->createHuman($_POST['nom'], $_POST['prénom'], $_POST['formFile'], $_POST['bio'], $_POST['naissance'], $_POST['inlineRadioOptions']);
+        $hdb->createHuman($_POST['nom'], $_POST['prenom'], $_POST['photo'], $_POST['bio'], $_POST['birth'], $_POST['inlineRadioOptions']);
     }
 ?>
 </body>
